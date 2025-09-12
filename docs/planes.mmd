@@ -1,0 +1,28 @@
+classDiagram
+namespace Empresa {
+  class User {
+    String id
+    String name
+    String username
+    List-String- post
+  }
+
+  class Posty {
+    String name
+  }
+}
+
+namespace Empresa2 {
+    class Usery {
+      String id
+      String name
+      String username
+      List-String- post
+    }
+
+    class Post {
+      String name
+    }
+  }
+
+  User <-- Post
