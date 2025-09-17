@@ -5,15 +5,26 @@ public class AreaTriangulo {
   Double ladoA;
   Double ladoB;
   Double ladoC;
-  Double semiperimetro;
+
+  void establecerLadoA(Double lado) { ladoA = lado;}
+  void establecerLadoB(Double lado) { ladoB = lado;}
+  void establecerLadoC(Double lado) { ladoC = lado;}
+
+  Double obtenerLadoA() { return ladoA;}
+  Double obtenerLadoB() { return ladoB;}
+  Double obtenerLadoC() { return ladoC;}
+
+  Double obtenerSemiperimetro () {
+    return (ladoA + ladoB + ladoC) / 2;
+  }
 
   Double calcularArea() {
-    semiperimetro = (ladoA + ladoB + ladoC) / 2;
+    Double semiperimetro = obtenerSemiperimetro();
     return Math.sqrt(
       semiperimetro *
-      (semiperimetro - ladoA) *
-      (semiperimetro - ladoB) *
-      (semiperimetro - ladoC)
+      (semiperimetro - obtenerLadoA()) *
+      (semiperimetro - obtenerLadoB()) *
+      (semiperimetro - obtenerLadoC())
     );
   }
 

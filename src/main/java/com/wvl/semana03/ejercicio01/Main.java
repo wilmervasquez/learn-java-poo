@@ -4,11 +4,10 @@ public class Main {
   public static void main(String[] args) {
     AreaTriangulo objeto = new AreaTriangulo();
 
-    objeto.ladoA = 12.0;
-    objeto.ladoB = 6.0;
-    objeto.ladoC = 8.0;
+    objeto.establecerLadoA(3.6);
+    objeto.establecerLadoB(4.0);
+    objeto.establecerLadoC(5.0);
 
     objeto.mostrarResultado();
-
   }
 }

@@ -1,7 +1,6 @@
 package com.wvl;
 
 import javax.swing.*;
-import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
@@ -9,6 +8,7 @@ public class Main {
 
     String bug = JOptionPane.showInputDialog("Ingrese su nombre: ");
     String bug2 = JOptionPane.showInputDialog("Ingrese su nombre: ");
+    JOptionPane.showMessageDialog(null,"222");
 
     System.out.println(bug);
   }

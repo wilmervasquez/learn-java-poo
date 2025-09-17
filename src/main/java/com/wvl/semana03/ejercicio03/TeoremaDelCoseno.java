@@ -6,11 +6,19 @@ public class TeoremaDelCoseno {
   Double ladoC;
   Double alfa; // en radianes
 
+  void establecerLadoA(Double b) { ladoB = b; }
+  void establecerLadoC(Double c) { ladoC = c; }
+  void establecerAlfa(Double angulo) { alfa = angulo; }
+
+  Double ontenerLadoB () { return ladoB; }
+  Double ontenerLadoC () { return ladoC; }
+  Double obtenerAlfa() { return alfa; }
+
   Double calcularLadoDesconocido() {
     return Math.sqrt(
-      Math.pow(ladoB, 2) +
-      Math.pow(ladoC, 2) -
-      2 * ladoB * ladoC * Math.cos(alfa)
+      Math.pow(ontenerLadoB(), 2) +
+      Math.pow(ontenerLadoC(), 2) -
+      2 * ladoB * ladoC * Math.cos(obtenerAlfa())
     );
   }
 
