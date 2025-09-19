@@ -6,25 +6,33 @@ public class AreaTriangulo {
   Double ladoB;
   Double ladoC;
 
-  void establecerLadoA(Double lado) { ladoA = lado;}
-  void establecerLadoB(Double lado) { ladoB = lado;}
-  void establecerLadoC(Double lado) { ladoC = lado;}
+  public AreaTriangulo() { }
 
-  Double obtenerLadoA() { return ladoA;}
-  Double obtenerLadoB() { return ladoB;}
-  Double obtenerLadoC() { return ladoC;}
+  public AreaTriangulo(Double ladoA, Double ladoB, Double ladoC) {
+    setLadoA(ladoA);
+    setLadoB(ladoB);
+    setLadoC(ladoC);
+  }
 
-  Double obtenerSemiperimetro () {
+  void setLadoA(Double lado) { ladoA = lado;}
+  void setLadoB(Double lado) { ladoB = lado;}
+  void setLadoC(Double lado) { ladoC = lado;}
+
+  Double getLadoA() { return ladoA;}
+  Double getLadoB() { return ladoB;}
+  Double getLadoC() { return ladoC;}
+
+  Double getSemiperimetro() {
     return (ladoA + ladoB + ladoC) / 2;
   }
 
   Double calcularArea() {
-    Double semiperimetro = obtenerSemiperimetro();
+    Double semiperimetro = getSemiperimetro();
     return Math.sqrt(
       semiperimetro *
-      (semiperimetro - obtenerLadoA()) *
-      (semiperimetro - obtenerLadoB()) *
-      (semiperimetro - obtenerLadoC())
+      (semiperimetro - getLadoA()) *
+      (semiperimetro - getLadoB()) *
+      (semiperimetro - getLadoC())
     );
   }
 

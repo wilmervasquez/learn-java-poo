@@ -5,14 +5,21 @@ public class HipotenusaTriangulo {
   Double ladoA;
   Double ladoB;
 
-  void establecrLadoA (Double lado) { ladoA = lado; }
-  void establecrLadoB (Double lado) { ladoB = lado; }
+  public HipotenusaTriangulo() { }
 
-  Double obtenerLadoA () { return ladoA; }
-  Double obtenerLadoB () { return ladoB; }
+  public HipotenusaTriangulo(Double ladoA, Double ladoB) {
+    setLadoA(ladoA);
+    setLadoB(ladoB);
+  }
+
+  void setLadoA (Double lado) { ladoA = lado; }
+  void setLadoB (Double lado) { ladoB = lado; }
+
+  Double getLadoA () { return ladoA; }
+  Double getLadoB () { return ladoB; }
 
   Double calcularHipotenusa() {
-    return Math.sqrt(Math.pow(obtenerLadoA(), 2) + Math.pow(obtenerLadoB(), 2));
+    return Math.sqrt(Math.pow(getLadoA(), 2) + Math.pow(getLadoB(), 2));
   }
 
   void mostrarResultado() {
