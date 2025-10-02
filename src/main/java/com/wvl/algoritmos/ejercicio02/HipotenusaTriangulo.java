@@ -2,8 +2,8 @@ package com.wvl.algoritmos.ejercicio02;
 
 // 1.12. HIPOTENUSA DE UN TRIÁNGULO RECTÁNGULO
 public class HipotenusaTriangulo {
-  Double ladoA;
-  Double ladoB;
+  private Double ladoA;
+  private Double ladoB;
 
   public HipotenusaTriangulo() { }
 

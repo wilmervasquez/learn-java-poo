@@ -2,9 +2,9 @@ package com.wvl.algoritmos.ejercicio01;
 
 // 1.11. ÁREA DE UN TRIÁNGULO EN FUNCIÓN DEL SEMIPERÍMETRO
 public class AreaTriangulo {
-  Double ladoA;
-  Double ladoB;
-  Double ladoC;
+  private Double ladoA;
+  private Double ladoB;
+  private Double ladoC;
 
   public AreaTriangulo() { }
 

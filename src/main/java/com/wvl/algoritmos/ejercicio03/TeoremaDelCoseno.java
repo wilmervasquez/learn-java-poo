@@ -2,9 +2,9 @@ package com.wvl.algoritmos.ejercicio03;
 
 // 1.13. TEOREMA DEL COSENO
 public class TeoremaDelCoseno {
-  Double ladoB;
-  Double ladoC;
-  Double alfa; // en radianes
+  private Double ladoB;
+  private Double ladoC;
+  private Double alfa; // en radianes
 
   public TeoremaDelCoseno() { }
 

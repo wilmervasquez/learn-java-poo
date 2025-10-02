@@ -2,18 +2,31 @@ package com.wvl.algoritmos.ejercicio10;
 
 // 1.20. CONVERSIÓN DE GRADOS CELSIUS A FARENHEIT, KELVIN Y RANKINE
 public class ConversorDeTemperatura {
-  Double gradosCelsius;
+  private Double gradosCelsius;
+
+  public ConversorDeTemperatura() {}
+  public ConversorDeTemperatura(Double gradosCelsius) {
+    this.gradosCelsius = gradosCelsius;
+  }
+
+  public Double getGradosCelsius() {
+    return gradosCelsius;
+  }
+
+  public void setGradosCelsius(Double gradosCelsius) {
+    this.gradosCelsius = gradosCelsius;
+  }
 
   Double convertirAFarenheit() {
-    return (gradosCelsius * 9/5) + 32;
+    return (getGradosCelsius() * 9/5) + 32;
   }
 
   Double convertirAKelvin() {
-    return gradosCelsius + 273.15;
+    return getGradosCelsius() + 273.15;
   }
 
   Double convertirARankine() {
-    return (9/5) * gradosCelsius + 492;
+    return (9/5) * getGradosCelsius() + 492;
   }
 
   void mostrarResultados() {
