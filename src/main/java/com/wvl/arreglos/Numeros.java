@@ -1,26 +1,28 @@
 package com.wvl.arreglos;
 
 public class Numeros {
-  private int[] numeros;
+  private int n;
+  private final int[] numeros;
   Numeros(int n) {
     numeros = new int[n];
+    this.n = n;
   }
 
   void setNumero(int i, int numero) {
-    if (i >= 0 && i < numeros.length) {
+    if (i >= 0 && i < getLenght()) {
       numeros[i] = numero;
     }
   }
 
   int getNumero(int i) {
-    if (i >= 0 && i < numeros.length) {
+    if (i >= 0 && i < getLenght()) {
       return numeros[i];
     }
     return 0;
   }
 
   int getLenght() {
-    return numeros.length;
+    return n;
   }
 
   int buscar(int numero) {
@@ -30,21 +32,15 @@ public class Numeros {
       }
     }
 
-
     return -1;
   }
 
   void eliminar(int indice) {
     if (indice >= 0 && indice < numeros.length) {
-      int[] tmp = new int[numeros.length - 1];
-
-      int j = 0;
-      for (int i = 0; i < numeros.length; i++) {
-        if (i != indice) {
-          tmp[j++] = numeros[i];
-        }
+      for (int i = indice; i < n; i++) {
+        numeros[i] = numeros[i+1];
       }
-      numeros = tmp;
+      n--;
     }
   }
 }
