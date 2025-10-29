@@ -25,7 +25,7 @@ public class Main {
 
 
     JPanel panelFormulario = new JPanel(new GridLayout(4, 2));
-    panelFormulario.setBackground(Color.GREEN);
+    panelFormulario.setBackground(Color.ORANGE);
 
     txtCodigo = new JTextField();
     txtNombres = new JTextField();

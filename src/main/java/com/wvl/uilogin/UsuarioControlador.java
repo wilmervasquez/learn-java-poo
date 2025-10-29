@@ -7,7 +7,7 @@ public class UsuarioControlador {
   public UsuarioControlador() {
     usuarios = new ArrayList<>();
 
-    usuarios.add(new Usuario("JUan", "wilmer@gmail.com", "1234"));
+    usuarios.add(new Usuario("Juan", "juan@gmail.com", "1234"));
   }
 
   public Usuario autenticar(String email, String password) {
