@@ -1,0 +1,66 @@
+classDiagram
+  Persona <|-- Owner
+  Persona <|-- Cliente
+  Persona <|-- Vendedor
+
+  Owner "1" -- "0..*" Compra : realiza
+  Compra "1" --> "1" Proveedor : perteneceA
+  Compra "1" --> "*" Producto : incluye
+  Compra "1" --> "1" Stock : actualiza
+
+  Cliente "1" --> "0..*" Venta : realiza
+  Vendedor "1" --> "0..*" Venta : gestiona
+  Venta "1" --> "*" Producto : contiene
+
+  Producto "1" --> "1" Stock : tiene
+
+  class Persona {
+    +nombres: String
+    +primerApellido: String
+    +segundoApellido: String
+    +dni: String
+  }
+
+  class Owner {
+
+  }
+
+  class Cliente {
+    -codigo: String
+    -egresado: Boolean
+  }
+
+  class Vendedor {
+    +codigoEmpleado: String
+    +sucursal: String
+  }
+
+  class Proveedor {
+    +nombre: String
+    +ruc: String
+    +telefono: String
+  }
+
+  class Producto {
+    +codigo: String
+    +nombre: String
+    +precioUnitario: Double
+    +descripcion: String
+  }
+
+  class Stock {
+    +cantidadDisponible: Integer
+    +fechaActualizacion: Date
+  }
+
+  class Compra {
+    +fechaCompra: Date
+    +precioTotal: Double
+    +cantidadTotal: Integer
+  }
+
+  class Venta {
+    +fechaVenta: Date
+    +cantidad: Integer
+    +total: Double
+  }
