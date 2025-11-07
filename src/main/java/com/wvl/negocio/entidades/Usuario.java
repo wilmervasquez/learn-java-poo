@@ -1,11 +1,11 @@
-package com.wvl.uilogin;
+package com.wvl.negocio.entidades;
 
 public class Usuario {
   String nombre;
   String email;
   String password;
 
-  Usuario(String nombre, String email, String password) {
+  public Usuario(String nombre, String email, String password) {
     this.nombre = nombre;
     this.email = email;
     this.password = password;

@@ -5,11 +5,11 @@ import javax.swing.*;
 import com.wvl.negocio.controlador.ProductoControlador;
 import com.wvl.negocio.entidades.Producto;
 
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class TablaProductos extends JPanel {
   private JTable tabla;
   private DefaultTableModel modelo;
-  private JButton btnAgregar;
+  private JButton btnActualizar;
   private JButton btnEditar;
   private JButton btnEliminar;
 
@@ -35,7 +35,7 @@ public class TablaProductos extends JPanel {
     }, 0) {
       @Override
       public boolean isCellEditable(int row, int column) {
-        return false; // No permitir edición directa en la tabla
+        return false; // No permitir edición directa
       }
     };
 
@@ -46,59 +46,118 @@ public class TablaProductos extends JPanel {
     JScrollPane scrollPane = new JScrollPane(tabla);
     add(scrollPane, BorderLayout.CENTER);
 
-    // Panel inferior con botones
+    // Panel de botones
     JPanel buttonPanel = new JPanel();
-    btnAgregar = new JButton("Actualizar");
+    btnActualizar = new JButton("Actualizar");
     btnEditar = new JButton("Editar");
     btnEliminar = new JButton("Eliminar");
 
-
-    buttonPanel.add(btnAgregar);
+    buttonPanel.add(btnActualizar);
     buttonPanel.add(btnEditar);
     buttonPanel.add(btnEliminar);
 
-    btnAgregar.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        setProductos(productoControlador.getProductos());
+    add(buttonPanel, BorderLayout.SOUTH);
+
+    // Acción: actualizar lista desde el controlador
+    btnActualizar.addActionListener(e -> setProductos(productoControlador.getProductos()));
+
+    // Acción: editar producto
+    btnEditar.addActionListener(e -> {
+      int fila = tabla.getSelectedRow();
+      if (fila == -1) {
+        JOptionPane.showMessageDialog(this, "Selecciona un producto para editar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+        return;
+      }
+      Producto productoSeleccionado = productos.get(fila);
+      mostrarModalEdicion(productoSeleccionado, fila);
+    });
+
+    // Acción: eliminar producto
+    btnEliminar.addActionListener(e -> {
+      int fila = tabla.getSelectedRow();
+      if (fila == -1) {
+        JOptionPane.showMessageDialog(this, "Selecciona un producto para eliminar.", "Aviso", JOptionPane.WARNING_MESSAGE);
+        return;
+      }
+
+      int confirm = JOptionPane.showConfirmDialog(this,
+      "¿Estás seguro de que deseas eliminar este producto?",
+      "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+
+      if (confirm == JOptionPane.YES_OPTION) {
+        eliminarSeleccionado();
       }
     });
-    add(buttonPanel, BorderLayout.SOUTH);
   }
 
-  // Método para agregar un producto a la lista y tabla
-  public void agregarProducto(Producto producto) {
-    if (producto == null) return;
-    productos.add(producto);
-    modelo.addRow(new Object[]{
-    producto.getCodigo(),
-    producto.getNombre(),
-    producto.getPrecioUnitario(),
-    producto.getStock(),
-    producto.getFechaVencimiento() != null ? producto.getFechaVencimiento().format(dateFormatter) : ""
+  // Modal de edición
+  private void mostrarModalEdicion(Producto producto, int fila) {
+    JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), "Editar Producto", true);
+    dialog.setLayout(new GridLayout(6, 2, 10, 10));
+    dialog.setSize(400, 300);
+    dialog.setLocationRelativeTo(this);
+
+    JTextField txtCodigo = new JTextField(String.valueOf(producto.getCodigo()));
+    JTextField txtNombre = new JTextField(producto.getNombre());
+    JTextField txtPrecio = new JTextField(String.valueOf(producto.getPrecioUnitario()));
+    JTextField txtStock = new JTextField(String.valueOf(producto.getStock()));
+    JTextField txtFecha = new JTextField(producto.getFechaVencimiento() != null ?
+    producto.getFechaVencimiento().format(dateFormatter) : "");
+
+    dialog.add(new JLabel("Código:"));
+    dialog.add(txtCodigo);
+    dialog.add(new JLabel("Nombre:"));
+    dialog.add(txtNombre);
+    dialog.add(new JLabel("Precio Unitario:"));
+    dialog.add(txtPrecio);
+    dialog.add(new JLabel("Stock:"));
+    dialog.add(txtStock);
+    dialog.add(new JLabel("Fecha Vencimiento (yyyy-MM-dd):"));
+    dialog.add(txtFecha);
+
+    JButton btnGuardar = new JButton("Guardar");
+    JButton btnCancelar = new JButton("Cancelar");
+
+    dialog.add(btnGuardar);
+    dialog.add(btnCancelar);
+
+    btnCancelar.addActionListener(e -> dialog.dispose());
+
+    btnGuardar.addActionListener(e -> {
+      try {
+        // Actualiza valores del producto
+        producto.setCodigo(txtCodigo.getText().trim());
+        producto.setNombre(txtNombre.getText().trim());
+        producto.setPrecioUnitario(Double.parseDouble(txtPrecio.getText().trim()));
+        producto.setStock(Integer.parseInt(txtStock.getText().trim()));
+        if (!txtFecha.getText().trim().isEmpty()) {
+          producto.setFechaVencimiento(LocalDate.parse(txtFecha.getText().trim(), dateFormatter));
+        } else {
+          producto.setFechaVencimiento(null);
+        }
+
+        actualizarProducto(fila, producto);
+        JOptionPane.showMessageDialog(this, "Producto actualizado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        dialog.dispose();
+      } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error al actualizar: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+      }
     });
+
+    dialog.setVisible(true);
   }
 
-  // Método para obtener el producto seleccionado
-  public Producto getProductoSeleccionado() {
-    int fila = tabla.getSelectedRow();
-    if (fila == -1) return null;
-    return productos.get(fila);
-  }
-
-  // Método para eliminar el producto seleccionado
+  // Eliminar producto
   public void eliminarSeleccionado() {
     int fila = tabla.getSelectedRow();
     if (fila != -1) {
       productos.remove(fila);
       modelo.removeRow(fila);
-    } else {
-      JOptionPane.showMessageDialog(this, "Selecciona un producto para eliminar.", "Aviso", JOptionPane.WARNING_MESSAGE);
     }
   }
 
-  // Método para actualizar un producto (por ejemplo, tras editar)
+  // Actualizar producto en tabla
   public void actualizarProducto(int fila, Producto producto) {
-    if (fila < 0 || fila >= productos.size() || producto == null) return;
     productos.set(fila, producto);
     modelo.setValueAt(producto.getCodigo(), fila, 0);
     modelo.setValueAt(producto.getNombre(), fila, 1);
@@ -110,26 +169,7 @@ public class TablaProductos extends JPanel {
     );
   }
 
-  public JButton getBtnAgregar() {
-    return btnAgregar;
-  }
-
-  public JButton getBtnEditar() {
-    return btnEditar;
-  }
-
-  public JButton getBtnEliminar() {
-    return btnEliminar;
-  }
-
-  public JTable getTabla() {
-    return tabla;
-  }
-
-  public List<Producto> getProductos() {
-    return productos;
-  }
-
+  // Refrescar tabla completa
   public void setProductos(List<Producto> productos) {
     this.productos = new ArrayList<>(productos);
     modelo.setRowCount(0);

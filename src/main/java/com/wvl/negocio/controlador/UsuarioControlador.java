@@ -1,4 +1,6 @@
-package com.wvl.uilogin;
+package com.wvl.negocio.controlador;
+
+import com.wvl.negocio.entidades.Usuario;
 
 import java.util.ArrayList;
 

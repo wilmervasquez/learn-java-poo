@@ -1,6 +1,7 @@
-package com.wvl.uilogin;
+package com.wvl.negocio;
 
-import com.wvl.ui.Main;
+import com.wvl.negocio.entidades.Usuario;
+import com.wvl.negocio.controlador.UsuarioControlador;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +23,7 @@ public class LoginFrame extends JFrame {
     setLocationRelativeTo(null);
     setLayout(null);
 
-    JLabel bien = new JLabel("Bienvenido", javax.swing.SwingConstants.CENTER);
+    JLabel bien = new JLabel("Bienvenido", SwingConstants.CENTER);
     bien.setBounds(150, 30, 300, 25);
     bien.setFont(new Font("Geist", Font.BOLD, 36));
     add(bien);
@@ -73,6 +74,6 @@ public class LoginFrame extends JFrame {
 
   void abrirVentanaPrincipal() {
     dispose();
-    new Main().interfazEstuduante();
+    new VIstaProductos().interfaz();
   }
 }

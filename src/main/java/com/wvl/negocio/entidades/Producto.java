@@ -40,6 +40,18 @@ public class Producto {
     return nombre;
   }
 
+  public void setCodigo(String codigo) {
+    this.codigo = codigo;
+  }
+
+  public void setDescripcion(String descripcion) {
+    this.descripcion = descripcion;
+  }
+
+  public void setImagen(String imagen) {
+    this.imagen = imagen;
+  }
+
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
