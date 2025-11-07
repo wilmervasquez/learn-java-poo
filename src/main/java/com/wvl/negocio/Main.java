@@ -2,7 +2,10 @@ package com.wvl.negocio;
 
 import com.wvl.negocio.controlador.ProductoControlador;
 import com.wvl.negocio.entidades.Producto;
+import com.wvl.negocio.vista.PanelAgregarProducto;
+import com.wvl.negocio.vista.PanelProductos;
 import com.wvl.negocio.vista.TabPrincipal;
+import com.wvl.negocio.vista.TablaProductos;
 import com.wvl.negocio.vista.componentes.CardProduct;
 
 import javax.swing.*;
@@ -12,51 +15,28 @@ public class Main {
   public  static void main(String[] args) {
 
       SwingUtilities.invokeLater(() -> {
+        ProductoControlador productoControlador = new ProductoControlador();
+
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
         frame.getContentPane().setBackground(Color.WHITE);
 
-        TabPrincipal  tabPrincipal = new TabPrincipal();
+        // tabs
+        JPanel panel1 = new PanelProductos(productoControlador);
+        PanelAgregarProducto panel2 = new PanelAgregarProducto();
+        TablaProductos panelTablaProductos = new TablaProductos();
 
-        ProductoControlador productoControlador = new ProductoControlador();
-        for(Producto producto : productoControlador.getProductos()) {
-          frame.add(new CardProduct(
-            producto.getImagen(),
-            producto.getNombre(),
-            producto.getPrecioUnitario()
-          ));
-        }
-        for(Producto producto : productoControlador.getProductos()) {
-          frame.add(new CardProduct(
-            producto.getImagen(),
-            producto.getNombre(),
-            producto.getPrecioUnitario()
-          ));
-        }
-        for(Producto producto : productoControlador.getProductos()) {
-          frame.add(new CardProduct(
-          producto.getImagen(),
-          producto.getNombre(),
-          producto.getPrecioUnitario()
-          ));
-        }
-        for(Producto producto : productoControlador.getProductos()) {
-          frame.add(new CardProduct(
-          producto.getImagen(),
-          producto.getNombre(),
-          producto.getPrecioUnitario()
-          ));
-        }
+        TabPrincipal  tabPrincipal = new TabPrincipal(panel1, panel2, panelTablaProductos);
+
+        panel2.setProducto(productoControlador.getProductos().getFirst());
+        panelTablaProductos.setProductos(productoControlador.getProductos());
+
+        frame.add(tabPrincipal);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800,600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
-
       });
-
-
   }
 }
