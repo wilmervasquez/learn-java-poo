@@ -2,14 +2,18 @@ package com.wvl.negocio.vista;
 
 import javax.swing.*;
 
+import com.wvl.negocio.controlador.ProductoControlador;
 import com.wvl.negocio.entidades.Producto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ArrayList;
+
 public class TablaProductos extends JPanel {
   private JTable tabla;
   private DefaultTableModel modelo;
@@ -20,7 +24,7 @@ public class TablaProductos extends JPanel {
   private List<Producto> productos = new ArrayList<>();
   private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-  public TablaProductos() {
+  public TablaProductos(ProductoControlador productoControlador) {
     setLayout(new BorderLayout(10, 10));
     setBorder(BorderFactory.createTitledBorder("Lista de Productos"));
     setBackground(Color.WHITE);
@@ -44,14 +48,20 @@ public class TablaProductos extends JPanel {
 
     // Panel inferior con botones
     JPanel buttonPanel = new JPanel();
-    btnAgregar = new JButton("Agregar");
+    btnAgregar = new JButton("Actualizar");
     btnEditar = new JButton("Editar");
     btnEliminar = new JButton("Eliminar");
+
 
     buttonPanel.add(btnAgregar);
     buttonPanel.add(btnEditar);
     buttonPanel.add(btnEliminar);
 
+    btnAgregar.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        setProductos(productoControlador.getProductos());
+      }
+    });
     add(buttonPanel, BorderLayout.SOUTH);
   }
 

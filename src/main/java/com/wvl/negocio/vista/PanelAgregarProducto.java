@@ -1,10 +1,12 @@
 package com.wvl.negocio.vista;
 
+import com.wvl.negocio.controlador.ProductoControlador;
 import com.wvl.negocio.entidades.Producto;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
 public class PanelAgregarProducto extends JPanel {
   private JTextField txtCodigo;
   private JTextField txtNombre;
@@ -13,13 +15,14 @@ public class PanelAgregarProducto extends JPanel {
   private JTextField txtImagen;
   private JSpinner spnStock;
   private JTextField txtFechaVencimiento;
+  private JComboBox<String> cmbCategoria; // 🔹 Nuevo campo
 
   private JButton btnGuardar;
   private JButton btnLimpiar;
 
   private DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-  public PanelAgregarProducto () {
+  public PanelAgregarProducto(ProductoControlador controlador) {
     setLayout(new BorderLayout(10, 10));
     setBorder(BorderFactory.createTitledBorder("Formulario de Producto"));
     setBackground(Color.WHITE);
@@ -44,7 +47,19 @@ public class PanelAgregarProducto extends JPanel {
     txtFechaVencimiento = new JTextField(15);
     txtFechaVencimiento.setToolTipText("Formato: yyyy-MM-dd");
 
-    // Añadir al panel
+    // 🔹 ComboBox de categoría
+    cmbCategoria = new JComboBox<>(new String[]{
+    "Electrónicos",
+    "Computadoras",
+    "Accesorios",
+    "Audio",
+    "Impresoras",
+    "Almacenamiento",
+    "Cámaras",
+    "Otros"
+    });
+
+    // Añadir campos al formulario
     int row = 0;
     addField(formPanel, gbc, row++, "Código:", txtCodigo);
     addField(formPanel, gbc, row++, "Nombre:", txtNombre);
@@ -53,6 +68,7 @@ public class PanelAgregarProducto extends JPanel {
     addField(formPanel, gbc, row++, "Imagen (URL o ruta):", txtImagen);
     addField(formPanel, gbc, row++, "Stock:", spnStock);
     addField(formPanel, gbc, row++, "Fecha de Vencimiento:", txtFechaVencimiento);
+    addField(formPanel, gbc, row++, "Categoría:", cmbCategoria); // 🔹 Nuevo campo visual
 
     // Botones
     JPanel buttonPanel = new JPanel();
@@ -60,6 +76,20 @@ public class PanelAgregarProducto extends JPanel {
     btnLimpiar = new JButton("Limpiar");
     buttonPanel.add(btnGuardar);
     buttonPanel.add(btnLimpiar);
+
+    // Acción de guardar
+    btnGuardar.addActionListener(e -> {
+      Producto nuevo = getProducto();
+      if (nuevo != null && controlador.agregarProducto(nuevo)) {
+        JOptionPane.showMessageDialog(this, "Producto agregado correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+        limpiar();
+      } else {
+        JOptionPane.showMessageDialog(this, "No se pudo agregar el producto (verifique código o datos)", "Error", JOptionPane.ERROR_MESSAGE);
+      }
+    });
+
+    // Acción de limpiar
+    btnLimpiar.addActionListener(e -> limpiar());
 
     add(formPanel, BorderLayout.CENTER);
     add(buttonPanel, BorderLayout.SOUTH);
@@ -74,18 +104,19 @@ public class PanelAgregarProducto extends JPanel {
     panel.add(field, gbc);
   }
 
-  // Obtener un objeto Producto a partir de los datos del formulario
+  // 🔹 Crear un Producto desde los campos del formulario
   public Producto getProducto() {
     try {
-      String codigo = txtCodigo.getText();
-      String nombre = txtNombre.getText();
-      Double precio = Double.parseDouble(txtPrecioUnitario.getText());
-      String descripcion = txtDescripcion.getText();
-      String imagen = txtImagen.getText();
+      String codigo = txtCodigo.getText().trim();
+      String nombre = txtNombre.getText().trim();
+      Double precio = Double.parseDouble(txtPrecioUnitario.getText().trim());
+      String descripcion = txtDescripcion.getText().trim();
+      String imagen = txtImagen.getText().trim();
       int stock = (Integer) spnStock.getValue();
-      LocalDate fecha = LocalDate.parse(txtFechaVencimiento.getText(), dateFormatter);
+      LocalDate fecha = LocalDate.parse(txtFechaVencimiento.getText().trim(), dateFormatter);
+      String categoria = (String) cmbCategoria.getSelectedItem(); // 🔹 Nueva línea
 
-      return new Producto(codigo, nombre, precio, descripcion, imagen, stock, fecha);
+      return new Producto(codigo, nombre, precio, descripcion, imagen, stock, fecha, categoria);
     } catch (Exception e) {
       JOptionPane.showMessageDialog(this, "Error al leer los datos: " + e.getMessage(),
       "Error", JOptionPane.ERROR_MESSAGE);
@@ -93,7 +124,7 @@ public class PanelAgregarProducto extends JPanel {
     }
   }
 
-  // Cargar los datos de un Producto existente al formulario
+  // 🔹 Cargar datos de un producto existente
   public void setProducto(Producto producto) {
     if (producto == null) return;
     txtCodigo.setText(producto.getCodigo());
@@ -104,9 +135,10 @@ public class PanelAgregarProducto extends JPanel {
     spnStock.setValue(producto.getStock());
     if (producto.getFechaVencimiento() != null)
       txtFechaVencimiento.setText(producto.getFechaVencimiento().format(dateFormatter));
+    cmbCategoria.setSelectedItem(producto.getCategoria()); // 🔹 Nueva línea
   }
 
-  // Limpia los campos del formulario
+  // 🔹 Limpiar campos
   public void limpiar() {
     txtCodigo.setText("");
     txtNombre.setText("");
@@ -115,9 +147,9 @@ public class PanelAgregarProducto extends JPanel {
     txtImagen.setText("");
     spnStock.setValue(0);
     txtFechaVencimiento.setText("");
+    cmbCategoria.setSelectedIndex(0); // 🔹 Restablecer selección
   }
 
-  // Métodos para acceder a los botones (para controladores externos)
   public JButton getBtnGuardar() {
     return btnGuardar;
   }

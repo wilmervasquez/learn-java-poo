@@ -23,8 +23,8 @@ public class Main {
 
         // tabs
         JPanel panel1 = new PanelProductos(productoControlador);
-        PanelAgregarProducto panel2 = new PanelAgregarProducto();
-        TablaProductos panelTablaProductos = new TablaProductos();
+        PanelAgregarProducto panel2 = new PanelAgregarProducto(productoControlador);
+        TablaProductos panelTablaProductos = new TablaProductos(productoControlador);
 
         TabPrincipal  tabPrincipal = new TabPrincipal(panel1, panel2, panelTablaProductos);
 

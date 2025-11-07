@@ -10,8 +10,11 @@ public class Producto {
   private String imagen;
   private int stock;
   private LocalDate fechaVencimiento;
+  private String categoria; // 🔹 Nuevo campo
 
-  public Producto(String codigo, String nombre, Double precioUnitario, String descripcion, String imagen, int stock, LocalDate fechaVencimiento) {
+  // 🔹 Constructor actualizado con categoría
+  public Producto(String codigo, String nombre, Double precioUnitario, String descripcion,
+                  String imagen, int stock, LocalDate fechaVencimiento, String categoria) {
     this.codigo = codigo;
     this.nombre = nombre;
     this.precioUnitario = precioUnitario;
@@ -19,8 +22,19 @@ public class Producto {
     this.imagen = imagen;
     this.stock = stock;
     this.fechaVencimiento = fechaVencimiento;
+    this.categoria = categoria;
   }
 
+  // 🔹 Constructor anterior (por compatibilidad)
+  public Producto(String codigo, String nombre, Double precioUnitario, String descripcion,
+                  String imagen, int stock, LocalDate fechaVencimiento) {
+    this(codigo, nombre, precioUnitario, descripcion, imagen, stock, fechaVencimiento, "Sin categoría");
+  }
+
+  // Getters y Setters
+  public String getCodigo() {
+    return codigo;
+  }
 
   public String getNombre() {
     return nombre;
@@ -28,6 +42,22 @@ public class Producto {
 
   public void setNombre(String nombre) {
     this.nombre = nombre;
+  }
+
+  public Double getPrecioUnitario() {
+    return precioUnitario;
+  }
+
+  public void setPrecioUnitario(Double precioUnitario) {
+    this.precioUnitario = precioUnitario;
+  }
+
+  public String getDescripcion() {
+    return descripcion;
+  }
+
+  public String getImagen() {
+    return imagen;
   }
 
   public int getStock() {
@@ -45,23 +75,17 @@ public class Producto {
   public void setFechaVencimiento(LocalDate fechaVencimiento) {
     this.fechaVencimiento = fechaVencimiento;
   }
-  public Double getPrecioUnitario() {
-    return precioUnitario;
+
+  public String getCategoria() {
+    return categoria;
   }
 
-  public String getCodigo() {
-    return codigo;
+  public void setCategoria(String categoria) {
+    this.categoria = categoria;
   }
 
-  public String getDescripcion() {
-    return descripcion;
-  }
-
-  public String getImagen() {
-    return imagen;
-  }
-
-  public void setPrecioUnitario(Double precioUnitario) {
-
+  @Override
+  public String toString() {
+    return String.format("%s - %s (%s) - S/%.2f", codigo, nombre, categoria, precioUnitario);
   }
 }
