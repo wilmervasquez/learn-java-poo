@@ -1,0 +1,135 @@
+classDiagram
+    Persona <|-- Cliente
+    Persona <|-- Vendedor
+    Cliente --> Venta 
+    Vendedor --> Venta 
+    Owner --> Compra 
+    Compra --> Proveedor 
+    Compra -->  Producto
+    Venta -->  Producto 
+
+    ProductoControlador -->  Producto
+    UsuarioControlador -->  Usuario 
+
+    class Persona {
+        #String nombres
+        #String primerApellido
+        #String segundoApellido
+        #String dni
+        +nombresCompletos() String
+    }
+
+    class Cliente {
+        -String codigo
+        -Boolean egresado
+        -List~Venta~ ventas
+        +getCodigo() String
+        +setCodigo(String) void
+        +getEgresado() Boolean
+        +setEgresado(Boolean) void
+        +getVentas() List~Venta~
+        +setVentas(List~Venta~) void
+    }
+
+    class Vendedor {
+        -String codigoEmpleado
+        -String sucursal
+        -List~Venta~ ventas
+    }
+
+    class Owner {
+        -List~Compra~ compras
+    }
+
+    class Proveedor {
+        -String nombre
+        -String ruc
+        -String telefono
+    }
+
+    class Producto {
+        -String codigo
+        -String nombre
+        -Double precioUnitario
+        -String descripcion
+        -String imagen
+        -int stock
+        -LocalDate fechaVencimiento
+        -String categoria
+        +getCodigo() String
+        +setCodigo(String) void
+        +getNombre() String
+        +setNombre(String) void
+        +getPrecioUnitario() Double
+        +setPrecioUnitario(Double) void
+        +getDescripcion() String
+        +setDescripcion(String) void
+        +getImagen() String
+        +setImagen(String) void
+        +getStock() int
+        +setStock(int) void
+        +getFechaVencimiento() LocalDate
+        +setFechaVencimiento(LocalDate) void
+        +getCategoria() String
+        +setCategoria(String) void
+    }
+
+    class Compra {
+        -LocalDate fechaCompra
+        -Double precioTotal
+        -Integer cantidadTotal
+        -Integer cantidad
+        -Owner owner
+        -Proveedor proveedor
+        -List~Producto~ productos
+        +getFechaCompra() LocalDate
+        +setFechaCompra(LocalDate) void
+        +getPrecioTotal() Double
+        +setPrecioTotal(Double) void
+        +getCantidadTotal() Integer
+        +setCantidadTotal(Integer) void
+        +getOwner() Owner
+        +setOwner(OwnVer) void
+        +getProveedor() Proveedor
+        +setProveedor(Proveedor) void
+        +getProductos() List~Producto~
+        +setProductos(List~Producto~) void
+        +getCantidad() int
+        +setCantidad(int) void
+    }
+
+    class Venta {
+        -LocalDate fechaVenta
+        -Integer cantidad
+        -Double total
+        -Cliente cliente
+        -Vendedor vendedor
+        -List~Producto~ productos
+    }
+
+    class Usuario {
+        -String nombre
+        -String email
+        -String password
+        +getNombre() String
+        +setNombre(String) void
+        +getEmail() String
+        +setEmail(String) void
+        +getPassword() String
+        +setPassword(String) void
+    }
+
+    class ProductoControlador {
+        -ArrayList~Producto~ productos
+        +getProductos() ArrayList~Producto~
+        +agregarProducto(Producto) boolean
+        +buscarProductoPorId(String) Producto
+        +listarProductos() ArrayList~Producto~
+        +actualizarProducto(String, Producto) boolean
+        +eliminarProducto(String) boolean
+    }
+
+    class UsuarioControlador {
+        -ArrayList~Usuario~ usuarios
+        +autenticar(String, String) Usuario
+    }

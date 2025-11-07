@@ -1,11 +1,12 @@
 package com.wvl.negocio.entidades;
 
-public class Usuario {
+public class Usuario extends Persona {
   String nombre;
   String email;
   String password;
 
   public Usuario(String nombre, String email, String password) {
+    super();
     this.nombre = nombre;
     this.email = email;
     this.password = password;
