@@ -1,0 +1,93 @@
+flowchart LR
+%% ==============================
+%% ENTIDADES EXTERNAS
+%% ==============================
+  E1[Estudiante solicitante]
+  E2[Área de Servicio Social]
+  E3[Comisión de Bienestar Universitario]
+  E4[Vicerrectorado Académico]
+  E5[Rectorado]
+  E6[Tesorería]
+  E7[Oficina de Matrícula]
+
+%% ==============================
+%% ALMACENES DE DATOS
+%% ==============================
+  D1[[Base de datos de convocatorias]]
+  D2[[Registro de solicitudes de beca]]
+  D3[[Informes socioeconómicos]]
+  D4[[Actas de comisión]]
+  D5[[Resoluciones rectorales]]
+  D6[[Base de datos de becarios]]
+
+%% ==============================
+%% PROCESOS (según Kendall)
+%% ==============================
+  P1([1. Publicar convocatoria de becas])
+  P2([2. Recepcionar solicitud y documentos])
+  P3([3. Evaluar situación socioeconómica y académica])
+  P4([4. Evaluar y dictaminar solicitudes])
+  P5([5. Emitir resolución de otorgamiento])
+  P6([6. Aplicar beneficio en sistema institucional])
+  P7([7. Realizar seguimiento y control de becas])
+
+%% ==============================
+%% BLOQUE 1: Convocatoria e información
+%% ==============================
+  E2 -->|Calendario académico y lineamientos| P1
+  P1 -->|Convocatoria publicada| D1
+  P1 -->|Convocatoria accesible| E1
+
+%% ==============================
+%% BLOQUE 2: Postulación y presentación
+%% ==============================
+  E1 -->|Solicitud de beca y documentos| P2
+  P2 -->|Expediente registrado| D2
+  P2 -->|Confirmación de recepción| E1
+
+%% ==============================
+%% BLOQUE 3: Evaluación socioeconómica
+%% ==============================
+  P2 -->|Expediente de solicitud| P3
+  E2 -->|Entrevista y visita domiciliaria| P3
+  P3 -->|Informe socioeconómico| D3
+  P3 -->|Informe socioeconómico| E3
+
+%% ==============================
+%% BLOQUE 4: Evaluación y dictamen
+%% ==============================
+  E3 -->|Revisión de informes y expedientes| P4
+  P4 -->|Acta con lista de becarios aprobados| D4
+  P4 -->|Acta de comisión| E4
+
+%% ==============================
+%% BLOQUE 5: Aprobación final y resolución
+%% ==============================
+  E4 -->|Casos aprobados| P5
+  E5 -->|Aprobación final| P5
+  P5 -->|Resolución de becas otorgadas| D5
+  P5 -->|Resolución oficial| E6
+  P5 -->|Resolución oficial| E7
+
+%% ==============================
+%% BLOQUE 6: Ejecución del beneficio
+%% ==============================
+  E6 -->|Datos de beneficiarios| P6
+  E7 -->|Datos académicos de beneficiarios| P6
+  P6 -->|Actualización en sistema de pagos y matrículas| D6
+  P6 -->|Becas aplicadas| E1
+
+%% ==============================
+%% BLOQUE 7: Seguimiento y control
+%% ==============================
+  E2 -->|Seguimiento académico y social| P7
+  P7 -->|Informe de renovación o pérdida| D6
+  P7 -->|Informe final de seguimiento| E3
+  P7 -->|Resultado de seguimiento| E1
+
+%% ==============================
+%% FLUJOS ADICIONALES
+%% ==============================
+  D2 -->|Expedientes almacenados| P3
+  D3 -->|Informes previos| P4
+  D5 -->|Resoluciones archivadas| P6

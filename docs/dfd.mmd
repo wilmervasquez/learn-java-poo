@@ -1,0 +1,56 @@
+flowchart LR
+  E1[Cliente]
+  E2[Departamento de control de inventarios]
+  E3[Almacen]
+  E4[Departamento de contabilidad]
+
+  %% PROCESOS (Kendall: Círculos con identificador único)
+  P1([1. Agregar pedido del cliente])
+  P2([2. Agregar registro de cliente])
+  P3([3. Producir listas de seleccion])
+  P4([4. Estado de cuenta de envío del cliente])
+  P5([5. Enviar pedido del cliente])
+  P6([6. Crear estado de cuenta del cliente])
+  P7([7. Producir cuentas por cobrar])
+  P8([8. Consultar informacion de articulo])
+
+  %% ALMACENES DE DATOS (Kendall: Cilindros/Forma de bandeja)
+  D1[[Archivo maestro de clientes]]
+  D2[[Archivo maestro de cliente]]
+  D3[[Archivo maestro de articulos]]
+
+
+  %% FLUJOS DE DATOS - BLOQUE 1: Convocatoria
+  P1 -->|Pedido pendiente| P3
+  P1 -->|Pedido pendiente| P4
+  P1 -->|Pedido pendiente| P6
+  P1 -->|Pedido pendiente| P7
+  P1 -->|Articulo en pedido pendiente| E2
+  P1 <-->|Registro de cliente| D1
+  P1 <-->|Registro de articulo| D3
+
+  P2 <-->|Registro de cliente| D1
+
+  P3 -->|Pedido del cliente| P4
+  P3 -->|Lista de seleccion de pedido| E3
+
+  P4 -->|Preparar estado de cuenta de envio| P5
+
+  P5 -->|Pedido enviado| E1
+  P6 -->|Estado de cuenta de facturacion| E1
+
+  P7 <-->|Registro de cliente| D1
+  P7 <-->|Informe de cuentas por cobrar| E4
+
+  P8 -->|Informacion del articulo| E1
+
+  E1 -->|Numero o descripcion del articulo| P8
+  E1 -->|Pedido del cliente| P1
+  E1 -->|informacion del nuevo cliente| P2
+
+  E3 -->|Articulos que cumplen con el pedido| P5
+
+  D2 -->|Nombre y direccion del cliente| P5
+  D2 -->|REgistro del cliente| P6
+
+

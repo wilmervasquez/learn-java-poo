@@ -8,6 +8,6 @@ public class Persona {
   protected String segundoApellido;
   protected String dni;
   String nombresCompletos() {
-    return nombres + " " + primerNombre + " " + segundoNombre;
+    return nombres + " " + primerApellido + " " + segundoApellido;
   }
 }

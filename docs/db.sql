@@ -142,7 +142,7 @@ ORDER BY year DESC;
 SELECT * FROM clients;
 SELECT * FROM type_of_vehicle;
 
---
+-- Cambiar nombre a la tabla
 ALTER TABLE clients ADD COLUMN phone CHAR(9) UNIQUE AFTER name;
 ALTER TABLE vehicles ADD COLUMN serie CHAR(12) UNIQUE AFTER type_of_vehicle_id;
 

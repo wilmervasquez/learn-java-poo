@@ -7,8 +7,20 @@ public class Producto {
   private String nombre;
   private Double precioUnitario;
   private String descripcion;
+  private String imagen;
   private int stock;
   private LocalDate fechaVencimiento;
+
+  public Producto(String codigo, String nombre, Double precioUnitario, String descripcion, String imagen, int stock, LocalDate fechaVencimiento) {
+    this.codigo = codigo;
+    this.nombre = nombre;
+    this.precioUnitario = precioUnitario;
+    this.descripcion = descripcion;
+    this.imagen = imagen;
+    this.stock = stock;
+    this.fechaVencimiento = fechaVencimiento;
+  }
+
 
   public String getNombre() {
     return nombre;
@@ -32,5 +44,24 @@ public class Producto {
 
   public void setFechaVencimiento(LocalDate fechaVencimiento) {
     this.fechaVencimiento = fechaVencimiento;
+  }
+  public Double getPrecioUnitario() {
+    return precioUnitario;
+  }
+
+  public String getCodigo() {
+    return codigo;
+  }
+
+  public String getDescripcion() {
+    return descripcion;
+  }
+
+  public String getImagen() {
+    return imagen;
+  }
+
+  public void setPrecioUnitario(Double precioUnitario) {
+
   }
 }
