@@ -1,5 +1,7 @@
 package com.wvl.negocio.vista.componentes;
 
+import com.wvl.negocio.utils.ImageCache;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.URI;
@@ -14,8 +16,7 @@ public class CardProduct extends JPanel {
 
     try {
       // Cargar imagen desde internet
-      URL url = new URI(imageUrl).toURL();
-      ImageIcon icon = new ImageIcon(url);
+      ImageIcon icon = ImageCache.getImage(imageUrl);
       Image scaled = icon.getImage().getScaledInstance(200, 150, Image.SCALE_SMOOTH);
       JLabel imageLabel = new JLabel(new ImageIcon(scaled));
       imageLabel.setHorizontalAlignment(SwingConstants.CENTER);

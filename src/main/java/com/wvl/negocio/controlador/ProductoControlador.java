@@ -55,7 +55,7 @@ public class ProductoControlador {
     "Teclado Mecánico Redragon Kumara",
     189.00,
     "Switches rojos, retroiluminación RGB, diseño compacto.",
-    "https://media.falabella.com/falabellaPE/116470435_01/w=800,h=800,fit=pad",
+    "https://phantom.pe/media/catalog/product/cache/c58c05327f55128aefac5642661cf3d1/t/e/teclado_logitech_pro_x_tkl_negro_1_.jpg",
     25,
     LocalDate.now().plusMonths(18),
     "Periféricos"

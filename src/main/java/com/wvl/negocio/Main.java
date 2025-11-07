@@ -9,6 +9,8 @@ import com.wvl.negocio.vista.TablaProductos;
 import com.wvl.negocio.vista.componentes.CardProduct;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 public class Main {
@@ -22,13 +24,22 @@ public class Main {
         frame.getContentPane().setBackground(Color.WHITE);
 
         // tabs
-        JPanel panel1 = new PanelProductos(productoControlador);
+        PanelProductos panel1 = new PanelProductos(productoControlador);
         PanelAgregarProducto panel2 = new PanelAgregarProducto(productoControlador);
         TablaProductos panelTablaProductos = new TablaProductos(productoControlador);
 
         TabPrincipal  tabPrincipal = new TabPrincipal(panel1, panel2, panelTablaProductos);
+        tabPrincipal.addChangeListener(new ChangeListener() {
+          public void stateChanged(ChangeEvent e) {
+            int index = tabPrincipal.getSelectedIndex();
+            String titulo = tabPrincipal.getTitleAt(index);
+            System.out.println("Pestaña actual: " + titulo);
 
-        panel2.setProducto(productoControlador.getProductos().getFirst());
+            panel1.actualizarVista();
+          }
+        });
+
+
         panelTablaProductos.setProductos(productoControlador.getProductos());
 
         frame.add(tabPrincipal);
