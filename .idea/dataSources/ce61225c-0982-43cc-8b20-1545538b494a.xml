@@ -1086,584 +1086,800 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="290" parent="1" name="dealership">
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-10-30.17:47:59</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-11-09.18:34:10</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="information_schema">
+    <schema id="291" parent="1" name="edu">
+      <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
+      <LastIntrospectionLevel>3</LastIntrospectionLevel>
+      <LastIntrospectionLocalTimestamp>2025-11-09.18:34:10</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="292" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="mysql">
+    <schema id="293" parent="1" name="market">
+      <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
+      <LastIntrospectionLevel>3</LastIntrospectionLevel>
+      <LastIntrospectionLocalTimestamp>2025-11-09.18:35:38</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="performance_schema">
+    <schema id="294" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="294" parent="1" name="phpmyadmin">
+    <schema id="295" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="295" parent="1" name="smartlab">
+    <schema id="296" parent="1" name="phpmyadmin">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="296" parent="1" name="sys">
+    <schema id="297" parent="1" name="smartlab">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="297" parent="1" name="test">
+    <schema id="298" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="298" parent="1" name="udh">
+    <schema id="299" parent="1" name="test">
+      <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
+      <LastIntrospectionLevel>3</LastIntrospectionLevel>
+      <LastIntrospectionLocalTimestamp>2025-11-09.18:34:10</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="299" parent="1" name="debian-sys-maint">
+    <schema id="300" parent="1" name="udh">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="301" parent="1" name="debian-sys-maint">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="300" parent="1" name="mysql.infoschema">
+    <user id="302" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="301" parent="1" name="mysql.session">
+    <user id="303" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="302" parent="1" name="mysql.sys">
+    <user id="304" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="303" parent="1" name="phpmyadmin">
+    <user id="305" parent="1" name="phpmyadmin">
       <Host>localhost</Host>
     </user>
-    <user id="304" parent="1" name="root">
+    <user id="306" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="305" parent="290" name="clients">
+    <table id="307" parent="290" name="clients">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="290" name="employees">
+    <table id="308" parent="290" name="employees">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="290" name="financing">
+    <table id="309" parent="290" name="financing">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="308" parent="290" name="maintenance">
+    <table id="310" parent="290" name="maintenance">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="309" parent="290" name="marks">
+    <table id="311" parent="290" name="marks">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="310" parent="290" name="models">
+    <table id="312" parent="290" name="models">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="311" parent="290" name="sales">
+    <table id="313" parent="290" name="sales">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="312" parent="290" name="sales_details">
+    <table id="314" parent="290" name="sales_details">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="313" parent="290" name="type_of_vehicle">
+    <table id="315" parent="290" name="type_of_vehicle">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="314" parent="290" name="vehicles">
+    <table id="316" parent="290" name="vehicles">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="315" parent="305" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <table id="317" parent="293" name="products">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="318" parent="293" name="users">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="319" parent="299" name="alumnos">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="320" parent="299" name="estudiantes">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="321" parent="299" name="materias">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="322" parent="307" name="id">
+      <AutoIncrement>10</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="316" parent="305" name="name">
+    <column id="323" parent="307" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="317" parent="305" name="phone">
+    <column id="324" parent="307" name="phone">
       <Position>3</Position>
       <StoredType>char(9)|0s</StoredType>
     </column>
-    <column id="318" parent="305" name="last_name">
+    <column id="325" parent="307" name="last_name">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="319" parent="305" name="dni">
+    <column id="326" parent="307" name="dni">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>char(9)|0s</StoredType>
     </column>
-    <column id="320" parent="305" name="email">
+    <column id="327" parent="307" name="email">
       <Position>6</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="321" parent="305" name="address">
+    <column id="328" parent="307" name="address">
       <Position>7</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <index id="322" parent="305" name="PRIMARY">
+    <index id="329" parent="307" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="323" parent="305" name="phone">
+    <index id="330" parent="307" name="phone">
       <ColNames>phone</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="324" parent="305" name="dni">
+    <index id="331" parent="307" name="dni">
       <ColNames>dni</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="325" parent="305" name="email">
+    <index id="332" parent="307" name="email">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="326" parent="305" name="PRIMARY">
+    <key id="333" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="327" parent="305" name="phone">
+    <key id="334" parent="307" name="phone">
       <UnderlyingIndexName>phone</UnderlyingIndexName>
     </key>
-    <key id="328" parent="305" name="dni">
+    <key id="335" parent="307" name="dni">
       <UnderlyingIndexName>dni</UnderlyingIndexName>
     </key>
-    <key id="329" parent="305" name="email">
+    <key id="336" parent="307" name="email">
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
-    <column id="330" parent="306" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="337" parent="308" name="id">
+      <AutoIncrement>5</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="331" parent="306" name="name">
+    <column id="338" parent="308" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="332" parent="306" name="last_name">
+    <column id="339" parent="308" name="last_name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="333" parent="306" name="charge">
+    <column id="340" parent="308" name="charge">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="334" parent="306" name="phone">
+    <column id="341" parent="308" name="phone">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>char(9)|0s</StoredType>
     </column>
-    <column id="335" parent="306" name="email">
+    <column id="342" parent="308" name="email">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <index id="336" parent="306" name="PRIMARY">
+    <index id="343" parent="308" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="337" parent="306" name="phone">
+    <index id="344" parent="308" name="phone">
       <ColNames>phone</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="338" parent="306" name="PRIMARY">
+    <key id="345" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="339" parent="306" name="phone">
+    <key id="346" parent="308" name="phone">
       <UnderlyingIndexName>phone</UnderlyingIndexName>
     </key>
-    <column id="340" parent="307" name="id">
+    <column id="347" parent="309" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="341" parent="307" name="sale_id">
+    <column id="348" parent="309" name="sale_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="342" parent="307" name="entity">
+    <column id="349" parent="309" name="entity">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="343" parent="307" name="amount">
+    <column id="350" parent="309" name="amount">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <column id="344" parent="307" name="term_in_months">
+    <column id="351" parent="309" name="term_in_months">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="345" parent="307" name="interest_rate">
+    <column id="352" parent="309" name="interest_rate">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>decimal(5,2 digit)|0s</StoredType>
     </column>
-    <foreign-key id="346" parent="307" name="fk_sale">
+    <foreign-key id="353" parent="309" name="fk_sale">
       <ColNames>sale_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>sales</RefTableName>
     </foreign-key>
-    <index id="347" parent="307" name="PRIMARY">
+    <index id="354" parent="309" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="348" parent="307" name="fk_sale">
+    <index id="355" parent="309" name="fk_sale">
       <ColNames>sale_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="349" parent="307" name="PRIMARY">
+    <key id="356" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="350" parent="308" name="id">
+    <column id="357" parent="310" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="351" parent="308" name="vehicle_id">
+    <column id="358" parent="310" name="vehicle_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="352" parent="308" name="maintenance_date">
+    <column id="359" parent="310" name="maintenance_date">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="353" parent="308" name="type_of_service">
+    <column id="360" parent="310" name="type_of_service">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>varchar(100)|0s</StoredType>
     </column>
-    <column id="354" parent="308" name="cost">
+    <column id="361" parent="310" name="cost">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <column id="355" parent="308" name="observations">
+    <column id="362" parent="310" name="observations">
       <Position>6</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <foreign-key id="356" parent="308" name="fk_vehicles_maintenance">
+    <foreign-key id="363" parent="310" name="fk_vehicles_maintenance">
       <ColNames>vehicle_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>vehicles</RefTableName>
     </foreign-key>
-    <index id="357" parent="308" name="PRIMARY">
+    <index id="364" parent="310" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="358" parent="308" name="fk_vehicles_maintenance">
+    <index id="365" parent="310" name="fk_vehicles_maintenance">
       <ColNames>vehicle_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="359" parent="308" name="PRIMARY">
+    <key id="366" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="360" parent="309" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="367" parent="311" name="id">
+      <AutoIncrement>3</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="361" parent="309" name="name">
+    <column id="368" parent="311" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <index id="362" parent="309" name="PRIMARY">
+    <index id="369" parent="311" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="363" parent="309" name="PRIMARY">
+    <key id="370" parent="311" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="364" parent="310" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="371" parent="312" name="id">
+      <AutoIncrement>9</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="365" parent="310" name="mark_id">
+    <column id="372" parent="312" name="mark_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="366" parent="310" name="name">
+    <column id="373" parent="312" name="name">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <foreign-key id="367" parent="310" name="fk_marks">
+    <foreign-key id="374" parent="312" name="fk_marks">
       <ColNames>mark_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>marks</RefTableName>
     </foreign-key>
-    <index id="368" parent="310" name="PRIMARY">
+    <index id="375" parent="312" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="369" parent="310" name="fk_marks">
+    <index id="376" parent="312" name="fk_marks">
       <ColNames>mark_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="370" parent="310" name="PRIMARY">
+    <key id="377" parent="312" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="371" parent="311" name="id">
+    <column id="378" parent="313" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="372" parent="311" name="client_id">
+    <column id="379" parent="313" name="client_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="373" parent="311" name="employee_id">
+    <column id="380" parent="313" name="employee_id">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="374" parent="311" name="sale_date">
+    <column id="381" parent="313" name="sale_date">
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <column id="375" parent="311" name="method_of_payment">
+    <column id="382" parent="313" name="method_of_payment">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="376" parent="311" name="total">
+    <column id="383" parent="313" name="total">
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <foreign-key id="377" parent="311" name="fk_clients">
+    <foreign-key id="384" parent="313" name="fk_clients">
       <ColNames>client_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>clients</RefTableName>
     </foreign-key>
-    <foreign-key id="378" parent="311" name="fk_employees">
+    <foreign-key id="385" parent="313" name="fk_employees">
       <ColNames>employee_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>employees</RefTableName>
     </foreign-key>
-    <index id="379" parent="311" name="PRIMARY">
+    <index id="386" parent="313" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="380" parent="311" name="fk_clients">
+    <index id="387" parent="313" name="fk_clients">
       <ColNames>client_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="381" parent="311" name="fk_employees">
+    <index id="388" parent="313" name="fk_employees">
       <ColNames>employee_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="382" parent="311" name="PRIMARY">
+    <key id="389" parent="313" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="383" parent="312" name="id">
+    <column id="390" parent="314" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="384" parent="312" name="sale_id">
+    <column id="391" parent="314" name="sale_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="385" parent="312" name="vehicle_id">
+    <column id="392" parent="314" name="vehicle_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="386" parent="312" name="quantity">
+    <column id="393" parent="314" name="quantity">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="387" parent="312" name="unit_price">
+    <column id="394" parent="314" name="unit_price">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <foreign-key id="388" parent="312" name="fk_sales">
+    <foreign-key id="395" parent="314" name="fk_sales">
       <ColNames>sale_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>sales</RefTableName>
     </foreign-key>
-    <foreign-key id="389" parent="312" name="fk_vehicles">
+    <foreign-key id="396" parent="314" name="fk_vehicles">
       <ColNames>vehicle_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>vehicles</RefTableName>
     </foreign-key>
-    <index id="390" parent="312" name="PRIMARY">
+    <index id="397" parent="314" name="PRIMARY">
       <ColNames>id
 sale_id
 vehicle_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="391" parent="312" name="fk_sales">
+    <index id="398" parent="314" name="fk_sales">
       <ColNames>sale_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="392" parent="312" name="fk_vehicles">
+    <index id="399" parent="314" name="fk_vehicles">
       <ColNames>vehicle_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="393" parent="312" name="PRIMARY">
+    <key id="400" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="394" parent="313" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="401" parent="315" name="id">
+      <AutoIncrement>3</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="395" parent="313" name="description">
+    <column id="402" parent="315" name="description">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <index id="396" parent="313" name="PRIMARY">
+    <index id="403" parent="315" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="397" parent="313" name="PRIMARY">
+    <key id="404" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="398" parent="314" name="id">
+    <column id="405" parent="316" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="406" parent="316" name="model_id">
+      <Position>2</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="407" parent="316" name="type_of_vehicle_id">
+      <Position>3</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="408" parent="316" name="serie">
+      <Position>4</Position>
+      <StoredType>char(12)|0s</StoredType>
+    </column>
+    <column id="409" parent="316" name="year">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="410" parent="316" name="color">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <column id="411" parent="316" name="price">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>decimal(10,2 digit)|0s</StoredType>
+    </column>
+    <column id="412" parent="316" name="stock">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <foreign-key id="413" parent="316" name="fk_models">
+      <ColNames>model_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>models</RefTableName>
+    </foreign-key>
+    <foreign-key id="414" parent="316" name="fk_type_of_vehicle">
+      <ColNames>type_of_vehicle_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>type_of_vehicle</RefTableName>
+    </foreign-key>
+    <index id="415" parent="316" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="416" parent="316" name="serie">
+      <ColNames>serie</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="417" parent="316" name="fk_models">
+      <ColNames>model_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="418" parent="316" name="fk_type_of_vehicle">
+      <ColNames>type_of_vehicle_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="419" parent="316" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="420" parent="316" name="serie">
+      <UnderlyingIndexName>serie</UnderlyingIndexName>
+    </key>
+    <column id="421" parent="317" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="399" parent="314" name="model_id">
+    <column id="422" parent="317" name="name">
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>int|0s</StoredType>
+      <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="400" parent="314" name="type_of_vehicle_id">
+    <column id="423" parent="317" name="price">
+      <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="401" parent="314" name="serie">
-      <Position>4</Position>
-      <StoredType>char(12)|0s</StoredType>
-    </column>
-    <column id="402" parent="314" name="year">
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="403" parent="314" name="color">
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StoredType>varchar(30)|0s</StoredType>
-    </column>
-    <column id="404" parent="314" name="price">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
       <StoredType>decimal(10,2 digit)|0s</StoredType>
     </column>
-    <column id="405" parent="314" name="stock">
+    <column id="424" parent="317" name="stock">
       <NotNull>1</NotNull>
-      <Position>8</Position>
+      <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="406" parent="314" name="fk_models">
-      <ColNames>model_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>models</RefTableName>
-    </foreign-key>
-    <foreign-key id="407" parent="314" name="fk_type_of_vehicle">
-      <ColNames>type_of_vehicle_id</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>type_of_vehicle</RefTableName>
-    </foreign-key>
-    <index id="408" parent="314" name="PRIMARY">
+    <column id="425" parent="317" name="created_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="426" parent="317" name="updated_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>6</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="427" parent="317" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="409" parent="314" name="serie">
-      <ColNames>serie</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="410" parent="314" name="fk_models">
-      <ColNames>model_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="411" parent="314" name="fk_type_of_vehicle">
-      <ColNames>type_of_vehicle_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="412" parent="314" name="PRIMARY">
+    <key id="428" parent="317" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="413" parent="314" name="serie">
-      <UnderlyingIndexName>serie</UnderlyingIndexName>
+    <column id="429" parent="318" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="430" parent="318" name="name">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="431" parent="318" name="last_name">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="432" parent="318" name="dni">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>char(8)|0s</StoredType>
+    </column>
+    <column id="433" parent="318" name="email">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="434" parent="318" name="password">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <index id="435" parent="318" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="436" parent="318" name="dni">
+      <ColNames>dni</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="437" parent="318" name="email">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="438" parent="318" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="439" parent="318" name="dni">
+      <UnderlyingIndexName>dni</UnderlyingIndexName>
+    </key>
+    <key id="440" parent="318" name="email">
+      <UnderlyingIndexName>email</UnderlyingIndexName>
+    </key>
+    <column id="441" parent="319" name="documento">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>char(8)|0s</StoredType>
+    </column>
+    <column id="442" parent="319" name="nombre">
+      <Position>2</Position>
+      <StoredType>varchar(30)|0s</StoredType>
+    </column>
+    <column id="443" parent="319" name="nota">
+      <Position>3</Position>
+      <StoredType>decimal(4,2 digit)|0s</StoredType>
+    </column>
+    <index id="444" parent="319" name="PRIMARY">
+      <ColNames>documento</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="445" parent="319" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="446" parent="320" name="idest">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="447" parent="320" name="nomest">
+      <Position>2</Position>
+      <StoredType>varchar(45)|0s</StoredType>
+    </column>
+    <column id="448" parent="320" name="apest">
+      <Position>3</Position>
+      <StoredType>varchar(50)|0s</StoredType>
+    </column>
+    <column id="449" parent="320" name="direst">
+      <Position>4</Position>
+      <StoredType>varchar(60)|0s</StoredType>
+    </column>
+    <column id="450" parent="320" name="celest">
+      <Position>5</Position>
+      <StoredType>char(9)|0s</StoredType>
+    </column>
+    <column id="451" parent="320" name="deporPract">
+      <Position>6</Position>
+      <StoredType>varchar(20)|0s</StoredType>
+    </column>
+    <index id="452" parent="320" name="PRIMARY">
+      <ColNames>idest</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="453" parent="320" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="454" parent="321" name="idmat">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="455" parent="321" name="nommat">
+      <Position>2</Position>
+      <StoredType>varchar(45)|0s</StoredType>
+    </column>
+    <index id="456" parent="321" name="PRIMARY">
+      <ColNames>idmat</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="457" parent="321" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

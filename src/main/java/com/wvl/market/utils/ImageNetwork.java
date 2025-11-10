@@ -1,19 +1,14 @@
-package com.wvl.negocio.utils;
+package com.wvl.market.utils;
 
-
-import javax.swing.*;
-import java.net.URI;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
-public class ImageCache  {
-  private static final String CACHE_DIR = "cache_imgs";
+
+public class ImageNetwork {
+  private static final String CACHE_DIR = "__storage/cache/";
 
   static {
     new File(CACHE_DIR).mkdirs();
