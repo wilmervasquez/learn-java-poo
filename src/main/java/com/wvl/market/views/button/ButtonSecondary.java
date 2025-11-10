@@ -9,6 +9,5 @@ public class ButtonSecondary extends JButton {
     setFont(new Font("Geist", Font.BOLD, 14));
     setBackground(Color.decode("#d1d5dc"));
     setForeground(Color.BLACK);
-
   }
 }
