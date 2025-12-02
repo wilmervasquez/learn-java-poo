@@ -1,0 +1,34 @@
+graph TD
+%% Definición de Actores
+  actor[Postulante]
+  actor2(Administrador de Admisión)
+  actor3[Sistema Bancario]
+
+%% Definición del Límite del Sistema (System Boundary)
+  subgraph Sistema de Admisión UDH
+    UC1(Inscribirse al Examen)
+    UC2(Realizar Pago de Derechos)
+    UC3(Cargar Documentos Digitales)
+    UC4(Generar Carnet de Postulante)
+    UC5(Registrar Resultados del Examen)
+    UC6(Publicar Lista de Ingresantes)
+    UC7(Transferir Datos del Ingresante)
+    UC_INC1(Validar Datos Personales)
+    UC_EXT1(Solicitar Factura)
+  end
+
+%% Asociaciones de Actores a Casos de Uso
+  actor --> UC1
+  actor --> UC2
+  actor --> UC3
+  actor --> UC4
+  actor2 --> UC5
+  actor2 --> UC6
+  actor2 --> UC7
+  actor3 --> UC2
+
+%% Relaciones de Inclusión (Include)
+%% Inclusión: La flecha va del caso base al incluido (UC1 requiere UC_INC1)
+
+%% Relaciones de Extensión (Extend)
+%% Extensión: La flecha va del caso extensor al caso base (UC_EXT1 extiende UC2)

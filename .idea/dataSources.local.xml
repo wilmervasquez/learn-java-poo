@@ -37,6 +37,7 @@
             <name qname="test" />
             <name qname="edu" />
             <name qname="market" />
+            <name qname="poo" />
           </node>
         </introspection-scope>
       </schema-mapping>
