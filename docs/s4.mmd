@@ -1,0 +1,172 @@
+classDiagram
+    class Main {
+        +main(String[] args)
+    }
+
+    class MainFrame {
+        +MainFrame()
+    }
+
+    class CategoriaDAO {
+        +insertar(Categoria categoria)
+        +obtenerPorId(int id) Categoria
+        +obtenerTodos() List~Categoria~
+        +actualizar(Categoria categoria)
+        +eliminar(int id)
+    }
+
+    class EmpleadoDAO {
+        +insertar(Empleado empleado)
+        +obtenerPorId(int id) Empleado
+        +obtenerTodos() List~Empleado~
+        +actualizar(Empleado empleado)
+        +eliminar(int id)
+    }
+
+    class ProductoDAO {
+        +insertar(Producto producto)
+        +obtenerPorId(int id) Producto
+        +obtenerTodos() List~Producto~
+        +actualizar(Producto producto)
+        +eliminar(int id)
+    }
+
+    class VentaDAO {
+        +insertar(Venta venta)
+        +obtenerTodas() List~Venta~
+        +obtenerReporteCompleto() List~ReporteVenta~
+        +registrarVenta(int idProducto, int idEmpleado, int cantidad) boolean
+    }
+
+    class ConexionDB {
+        +getConnection() Connection
+    }
+
+    class Categoria {
+        -int id
+        -String nombre
+        +Categoria()
+        +Categoria(int id, String nombre)
+        +getId() int
+        +setId(int id)
+        +getNombre() String
+        +setNombre(String nombre)
+        +toString() String
+    }
+
+    class Empleado {
+        -int id
+        -String nombre
+        -String apellido
+        -String dni
+        -String telefono
+        -String cargo
+        -LocalDate fechaContratacion
+        +Empleado()
+        +Empleado(int, String, String, String, String, String, LocalDate)
+        +getId() int
+        +setId(int id)
+        +getNombre() String
+        +setNombre(String nombre)
+        +getApellido() String
+        +setApellido(String apellido)
+        +getDni() String
+        +setDni(String dni)
+        +getTelefono() String
+        +setTelefono(String telefono)
+        +getCargo() String
+        +setCargo(String cargo)
+        +getFechaContratacion() LocalDate
+        +setFechaContratacion(LocalDate fechaContratacion)
+    }
+
+    class Producto {
+        -int id
+        -String sku
+        -String nombre
+        -String marca
+        -double precio
+        -int cantidad
+        -int categoriaId
+        -int activo
+        -Categoria categoria
+        +Producto()
+        +Producto(int, String, String, String, double, int, int)
+        +setCategoria(Categoria categoria)
+        +getCategoria() Categoria
+        +getId() int
+        +setId(int id)
+        +getSku() String
+        +setSku(String sku)
+        +getNombre() String
+        +setNombre(String nombre)
+        +getMarca() String
+        +setMarca(String marca)
+        +getPrecio() double
+        +setPrecio(double precio)
+        +getCantidad() int
+        +setCantidad(int cantidad)
+        +getCategoriaId() int
+        +setCategoriaId(int categoriaId)
+        +getActivo() int
+        +setActivo(int activo)
+    }
+
+    class Venta {
+        -int id
+        -int productoId
+        -int empleadoId
+        -int cantidad
+        -double precioUnitario
+        -LocalDateTime fechaVenta
+        +Venta()
+        +Venta(int, int, int, int, double, LocalDateTime)
+        +getId() int
+        +setId(int id)
+        +getProductoId() int
+        +setProductoId(int productoId)
+        +getEmpleadoId() int
+        +setEmpleadoId(int empleadoId)
+        +getCantidad() int
+        +setCantidad(int cantidad)
+        +getPrecioUnitario() double
+        +setPrecioUnitario(double precioUnitario)
+        +getFechaVenta() LocalDateTime
+        +setFechaVenta(LocalDateTime fechaVenta)
+    }
+
+    class ReporteVenta {
+        -int idVenta
+        -String nombreProducto
+        -String nombreEmpleado
+        -int cantidad
+        -double precioUnitario
+        -double total
+        -LocalDateTime fecha
+        +ReporteVenta(int, String, String, int, double, LocalDateTime)
+        +getIdVenta() int
+        +getNombreProducto() String
+        +getNombreEmpleado() String
+        +getCantidad() int
+        +getPrecioUnitario() double
+        +getTotal() double
+        +getFecha() LocalDateTime
+    }
+
+    Main ..> MainFrame
+
+    ProductoDAO ..> ConexionDB 
+    ProductoDAO ..> Producto 
+    ProductoDAO ..> Categoria 
+
+    CategoriaDAO ..> ConexionDB 
+    CategoriaDAO ..> Categoria 
+
+    EmpleadoDAO ..> ConexionDB 
+    EmpleadoDAO ..> Empleado 
+
+    VentaDAO ..> ConexionDB 
+    VentaDAO ..> Venta 
+    VentaDAO ..> ReporteVenta
+
+    Producto o-- Categoria 
