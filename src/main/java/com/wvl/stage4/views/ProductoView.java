@@ -4,6 +4,7 @@ import com.wvl.stage4.dao.ProductoDAO;
 import com.wvl.stage4.dao.CategoriaDAO;
 import com.wvl.stage4.models.Producto;
 import com.wvl.stage4.models.Categoria;
+import com.wvl.stage4.views.components.Button;
 import com.wvl.stage4.views.components.ComboBox;
 
 import javax.swing.*;
@@ -11,17 +12,18 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
+import com.wvl.stage4.views.components.*;
 
 public class ProductoView extends JPanel {
 
   private JTable tablaProductos;
   private DefaultTableModel tableModel;
-  private JButton btnCargar, btnAgregar, btnEliminar;
+  private Button btnCargar, btnAgregar, btnEliminar;
   private ProductoDAO productoDAO;
   private JComboBox<Categoria> comboFiltroCategoria;
   private JTextField txtFiltroNombre, txtFiltroMarca;
-  private JButton btnFiltrar, btnLimpiarFiltros;
-  private JButton btnAgregarCategoria;
+  private Button btnFiltrar, btnLimpiarFiltros;
+  private Button btnAgregarCategoria;
 
   public ProductoView() {
     productoDAO = new ProductoDAO();
@@ -34,6 +36,7 @@ public class ProductoView extends JPanel {
     String[] opciones = {"Perú", "México", "Argentina"};
 
     ComboBox<String> combo = new ComboBox<>(opciones);
+    combo.setFont(Fonts.SANS_SERIF);
     combo.setPreferredSize(new Dimension(200, 35));
 
   }
@@ -54,8 +57,8 @@ public class ProductoView extends JPanel {
     comboFiltroCategoria = new JComboBox<>();
     cargarCategoriasEnCombo(comboFiltroCategoria, true); // true agrega "Todos"
 
-    btnFiltrar = new JButton("Aplicar Filtro");
-    btnLimpiarFiltros = new JButton("Limpiar");
+    btnFiltrar = new Button("Aplicar Filtro");
+    btnLimpiarFiltros = new Button("Limpiar");
 
     panelFiltros.add(new JLabel("Nombre:"));
     panelFiltros.add(txtFiltroNombre);
@@ -82,7 +85,6 @@ public class ProductoView extends JPanel {
     Categoria categoriaFiltro = (Categoria) comboFiltroCategoria.getSelectedItem();
     Integer idCategoria = categoriaFiltro.getId() != 0 ? categoriaFiltro.getId() : null;
 
-    try {
       List<Producto> productos = productoDAO.obtenerTodos();
       tableModel.setRowCount(0);
 
@@ -106,10 +108,7 @@ public class ProductoView extends JPanel {
         }
       }
 
-    } catch (SQLException e) {
-      JOptionPane.showMessageDialog(this, "Error al filtrar productos: " + e.getMessage(),
-      "Error DB", JOptionPane.ERROR_MESSAGE);
-    }
+
   }
 
   private void limpiarFiltros() {
@@ -123,10 +122,10 @@ public class ProductoView extends JPanel {
   private void inicializarComponentes() {
     JPanel panelBotones = new JPanel();
 
-    btnCargar = new JButton("Cargar Productos");
-    btnAgregar = new JButton("Agregar Producto");
-    btnEliminar = new JButton("Eliminar Seleccionado");
-    btnAgregarCategoria = new JButton("Agregar Categoría");
+    btnCargar = new Button("Cargar Productos");
+    btnAgregar = new Button("Agregar Producto");
+    btnEliminar = new Button("Eliminar Seleccionado");
+    btnAgregarCategoria = new Button("Agregar Categoría");
 
     panelBotones.add(btnCargar);
     panelBotones.add(btnAgregar);
@@ -160,7 +159,6 @@ public class ProductoView extends JPanel {
   private void cargarProductos() {
     tableModel.setRowCount(0);
 
-    try {
       List<Producto> productos = productoDAO.obtenerTodos();
       for (Producto p : productos) {
         tableModel.addRow(new Object[]{
@@ -173,10 +171,6 @@ public class ProductoView extends JPanel {
           p.getCategoria().getNombre()
         });
       }
-    } catch (SQLException e) {
-      JOptionPane.showMessageDialog(this, "Error al cargar productos: " + e.getMessage(),
-      "Error DB", JOptionPane.ERROR_MESSAGE);
-    }
   }
 
   private void mostrarDialogoAgregar() {

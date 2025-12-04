@@ -94,13 +94,10 @@ public class PanelReporteVentas extends JPanel {
     JTextField txtCantidad = new JTextField();
 
     // CARGAR PRODUCTOS
-    try {
       new ProductoDAO().obtenerTodos().forEach(p ->
       cmbProductos.addItem(p.getId() + " - " + p.getNombre())
       );
-    } catch (SQLException e) {
-      JOptionPane.showMessageDialog(this, "Error al cargar productos.");
-    }
+
 
     // CARGAR EMPLEADOS
     try {

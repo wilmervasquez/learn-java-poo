@@ -65,7 +65,7 @@ public class ProductoDAO {
     return null;
   }
 
-  public List<Producto> obtenerTodos() throws SQLException {
+  public List<Producto> obtenerTodos() {
     List<Producto> productos = new ArrayList<>();
     try {
       Connection conn = ConexionDB.getConnection();

@@ -2,6 +2,7 @@ package com.wvl.stage4.views;
 
 import com.wvl.stage4.dao.EmpleadoDAO;
 import com.wvl.stage4.models.Empleado;
+import com.wvl.stage4.views.components.Button;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -65,11 +66,11 @@ public class EmpleadoView extends JPanel {
     JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
     panelBotones.setBorder(BorderFactory.createTitledBorder("Acciones"));
 
-    JButton btnAgregar = Base.createButtonBrand("Agregar");
-    JButton btnActualizar = Base.createButtonBrand("Actualizar");
-    JButton btnEliminar = Base.createButtonDestructive("Despedir");
-    JButton btnLimpiar = Base.createButtonBrand("Limpiar");
-    JButton btnListar = Base.createButtonBrand("Listar");
+    Button btnAgregar = new Button("Agregar");
+    Button btnActualizar = new Button("Actualizar");
+    Button btnEliminar = new Button("Despedir");
+    Button btnLimpiar = new Button("Limpiar");
+    Button btnListar = new Button("Listar");
 
     panelBotones.add(btnAgregar);
     panelBotones.add(btnActualizar);
