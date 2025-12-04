@@ -1,4 +1,4 @@
-package com.wvl.stage4.view;
+package com.wvl.stage4.views;
 
 import com.wvl.stage4.dao.EmpleadoDAO;
 import com.wvl.stage4.models.Empleado;

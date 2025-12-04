@@ -1,9 +1,8 @@
-package com.wvl.stage4.view;
+package com.wvl.stage4.views;
 
 import com.wvl.stage4.dao.EmpleadoDAO;
 import com.wvl.stage4.dao.ProductoDAO;
 import com.wvl.stage4.dao.VentaDAO;
-import com.wvl.stage4.database.ConexionDB;
 import com.wvl.stage4.models.ReporteVenta;
 
 import javax.swing.*;

@@ -1,9 +1,10 @@
-package com.wvl.stage4.view;
+package com.wvl.stage4.views;
 
 import com.wvl.stage4.dao.ProductoDAO;
 import com.wvl.stage4.dao.CategoriaDAO;
 import com.wvl.stage4.models.Producto;
 import com.wvl.stage4.models.Categoria;
+import com.wvl.stage4.views.components.ComboBox;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -30,6 +31,11 @@ public class ProductoView extends JPanel {
     inicializarTabla();
     inicializarComponentes();
     cargarProductos();
+    String[] opciones = {"Perú", "México", "Argentina"};
+
+    ComboBox<String> combo = new ComboBox<>(opciones);
+    combo.setPreferredSize(new Dimension(200, 35));
+
   }
 
   private void inicializarTabla() {
@@ -184,7 +190,7 @@ public class ProductoView extends JPanel {
     JComboBox<Categoria> comboCategoria = new JComboBox<>();
     cargarCategoriasEnCombo(comboCategoria, false);
 
-    JPanel panel = new JPanel(new GridLayout(0, 2));
+    JPanel panel = new JPanel(new GridLayout(0, 2, 4,4));
     panel.add(new JLabel("SKU:")); panel.add(txtSku);
     panel.add(new JLabel("Nombre:")); panel.add(txtNombre);
     panel.add(new JLabel("Marca:")); panel.add(txtMarca);

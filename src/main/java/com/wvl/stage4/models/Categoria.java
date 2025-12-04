@@ -1,7 +1,6 @@
 package com.wvl.stage4.models;
 
 public class Categoria {
-
   private int id;
   private String nombre;
 
