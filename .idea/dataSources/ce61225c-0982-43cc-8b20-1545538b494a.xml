@@ -1926,7 +1926,7 @@ vehicle_id</ColNames>
       <UnderlyingIndexName>email</UnderlyingIndexName>
     </key>
     <column id="467" parent="324" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>31</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
@@ -1947,7 +1947,7 @@ vehicle_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="471" parent="325" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>101</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
@@ -1977,207 +1977,212 @@ vehicle_id</ColNames>
       <Position>7</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <index id="478" parent="325" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="479" parent="325" name="dni">
-      <ColNames>dni</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="480" parent="325" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="481" parent="325" name="dni">
-      <UnderlyingIndexName>dni</UnderlyingIndexName>
-    </key>
-    <column id="482" parent="326" name="id">
-      <AutoIncrement>1</AutoIncrement>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="483" parent="326" name="sku">
-      <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="484" parent="326" name="nombre">
-      <Position>3</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="485" parent="326" name="marca">
-      <Position>4</Position>
-      <StoredType>varchar(255)|0s</StoredType>
-    </column>
-    <column id="486" parent="326" name="precio">
-      <Position>5</Position>
-      <StoredType>double|0s</StoredType>
-    </column>
-    <column id="487" parent="326" name="cantidad">
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="488" parent="326" name="categoria_id">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-      <StoredType>int|0s</StoredType>
-    </column>
-    <column id="489" parent="326" name="activo">
+    <column id="478" parent="325" name="activo">
       <DefaultExpression>1</DefaultExpression>
       <Position>8</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <foreign-key id="490" parent="326" name="productos_ibfk_1">
+    <index id="479" parent="325" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="480" parent="325" name="dni">
+      <ColNames>dni</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="481" parent="325" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="482" parent="325" name="dni">
+      <UnderlyingIndexName>dni</UnderlyingIndexName>
+    </key>
+    <column id="483" parent="326" name="id">
+      <AutoIncrement>101</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="484" parent="326" name="sku">
+      <Position>2</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="485" parent="326" name="nombre">
+      <Position>3</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="486" parent="326" name="marca">
+      <Position>4</Position>
+      <StoredType>varchar(255)|0s</StoredType>
+    </column>
+    <column id="487" parent="326" name="precio">
+      <Position>5</Position>
+      <StoredType>double|0s</StoredType>
+    </column>
+    <column id="488" parent="326" name="cantidad">
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="489" parent="326" name="categoria_id">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="490" parent="326" name="activo">
+      <DefaultExpression>1</DefaultExpression>
+      <Position>8</Position>
+      <StoredType>tinyint(1)|0s</StoredType>
+    </column>
+    <foreign-key id="491" parent="326" name="productos_ibfk_1">
       <ColNames>categoria_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>categorias</RefTableName>
     </foreign-key>
-    <index id="491" parent="326" name="PRIMARY">
+    <index id="492" parent="326" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="492" parent="326" name="sku">
+    <index id="493" parent="326" name="sku">
       <ColNames>sku</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="493" parent="326" name="categoria_id">
+    <index id="494" parent="326" name="categoria_id">
       <ColNames>categoria_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="494" parent="326" name="PRIMARY">
+    <key id="495" parent="326" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="495" parent="326" name="sku">
+    <key id="496" parent="326" name="sku">
       <UnderlyingIndexName>sku</UnderlyingIndexName>
     </key>
-    <column id="496" parent="327" name="id">
+    <column id="497" parent="327" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="497" parent="327" name="name">
+    <column id="498" parent="327" name="name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(40)|0s</StoredType>
     </column>
-    <index id="498" parent="327" name="PRIMARY">
+    <index id="499" parent="327" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="499" parent="327" name="PRIMARY">
+    <key id="500" parent="327" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="500" parent="328" name="id">
+    <column id="501" parent="328" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="501" parent="328" name="email">
+    <column id="502" parent="328" name="email">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>varchar(40)|0s</StoredType>
     </column>
-    <index id="502" parent="328" name="PRIMARY">
+    <index id="503" parent="328" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="503" parent="328" name="PRIMARY">
+    <key id="504" parent="328" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="504" parent="329" name="userId">
+    <column id="505" parent="329" name="userId">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="505" parent="329" name="roleId">
+    <column id="506" parent="329" name="roleId">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <index id="506" parent="329" name="PRIMARY">
+    <index id="507" parent="329" name="PRIMARY">
       <ColNames>userId
 roleId</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="507" parent="329" name="PRIMARY">
+    <key id="508" parent="329" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="508" parent="330" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="509" parent="330" name="id">
+      <AutoIncrement>51</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="509" parent="330" name="producto_id">
+    <column id="510" parent="330" name="producto_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="510" parent="330" name="empleado_id">
+    <column id="511" parent="330" name="empleado_id">
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="511" parent="330" name="cantidad">
+    <column id="512" parent="330" name="cantidad">
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="512" parent="330" name="precio_unitario">
+    <column id="513" parent="330" name="precio_unitario">
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StoredType>double|0s</StoredType>
     </column>
-    <column id="513" parent="330" name="fecha_venta">
+    <column id="514" parent="330" name="fecha_venta">
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
       <StoredType>datetime|0s</StoredType>
     </column>
-    <foreign-key id="514" parent="330" name="ventas_ibfk_1">
+    <foreign-key id="515" parent="330" name="ventas_ibfk_1">
       <ColNames>producto_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>productos</RefTableName>
     </foreign-key>
-    <foreign-key id="515" parent="330" name="ventas_ibfk_2">
+    <foreign-key id="516" parent="330" name="ventas_ibfk_2">
       <ColNames>empleado_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>empleados</RefTableName>
     </foreign-key>
-    <index id="516" parent="330" name="PRIMARY">
+    <index id="517" parent="330" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="517" parent="330" name="producto_id">
+    <index id="518" parent="330" name="producto_id">
       <ColNames>producto_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="518" parent="330" name="empleado_id">
+    <index id="519" parent="330" name="empleado_id">
       <ColNames>empleado_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="519" parent="330" name="PRIMARY">
+    <key id="520" parent="330" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

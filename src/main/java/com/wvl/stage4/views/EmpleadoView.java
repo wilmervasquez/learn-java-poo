@@ -261,7 +261,6 @@ public class EmpleadoView extends JPanel {
       limpiarCampos();
 
       JOptionPane.showMessageDialog(this, "Empleado despedido correctamente.");
-
     } catch (Exception e) {
       JOptionPane.showMessageDialog(this, "Error al eliminar: " + e.getMessage());
     }

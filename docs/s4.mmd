@@ -53,12 +53,19 @@ classDiagram
         +setNombre(String nombre)
         +toString() String
     }
-
+    class Persona {
+      -String nombre
+      -String apellido
+      -String dni
+      +getNombre() String
+      +setNombre(String nombre)
+      +getApellido() String
+      +setApellido(String apellido)
+      +getDni() String
+      +setDni(String dni)
+    }
     class Empleado {
         -int id
-        -String nombre
-        -String apellido
-        -String dni
         -String telefono
         -String cargo
         -LocalDate fechaContratacion
@@ -66,12 +73,6 @@ classDiagram
         +Empleado(int, String, String, String, String, String, LocalDate)
         +getId() int
         +setId(int id)
-        +getNombre() String
-        +setNombre(String nombre)
-        +getApellido() String
-        +setApellido(String apellido)
-        +getDni() String
-        +setDni(String dni)
         +getTelefono() String
         +setTelefono(String telefono)
         +getCargo() String
@@ -169,4 +170,5 @@ classDiagram
     VentaDAO ..> Venta 
     VentaDAO ..> ReporteVenta
 
-    Producto o-- Categoria 
+    Producto o-- Categoria
+    Persona <|-- Empleado

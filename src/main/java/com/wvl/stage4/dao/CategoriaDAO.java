@@ -16,9 +16,6 @@ public class CategoriaDAO {
   private static final String UPDATE = "UPDATE categorias SET nombre = ? WHERE id = ?";
   private static final String DELETE = "DELETE FROM categorias WHERE id = ?";
 
-  // =========================
-  // INSERTAR
-  // =========================
   public void insertar(Categoria categoria) {
 
     Connection conn = null;
@@ -44,9 +41,6 @@ public class CategoriaDAO {
     }
   }
 
-  // =========================
-  // OBTENER POR ID
-  // =========================
   public Categoria obtenerPorId(int id) {
 
     Connection conn = null;
@@ -79,9 +73,6 @@ public class CategoriaDAO {
     return categoria;
   }
 
-  // =========================
-  // OBTENER TODOS
-  // =========================
   public List<Categoria> obtenerTodos() {
 
     Connection conn = null;
@@ -112,9 +103,6 @@ public class CategoriaDAO {
     return categorias;
   }
 
-  // =========================
-  // ACTUALIZAR
-  // =========================
   public void actualizar(Categoria categoria) {
 
     Connection conn = null;
@@ -137,9 +125,6 @@ public class CategoriaDAO {
     }
   }
 
-  // =========================
-  // ELIMINAR
-  // =========================
   public void eliminar(int id) {
 
     Connection conn = null;

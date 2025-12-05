@@ -13,15 +13,12 @@ public class EmpleadoDAO {
   private static final String INSERT =
   "INSERT INTO empleados (nombre, apellido, dni, telefono, cargo, fecha_contratacion) VALUES (?, ?, ?, ?, ?, ?)";
 
-  private static final String SELECT_ALL = "SELECT * FROM empleados";
+  private static final String SELECT_ALL = "SELECT * FROM empleados WHERE activo = 1";
   private static final String SELECT_BY_ID = "SELECT * FROM empleados WHERE id = ?";
   private static final String UPDATE =
   "UPDATE empleados SET nombre = ?, apellido = ?, dni = ?, telefono = ?, cargo = ?, fecha_contratacion = ? WHERE id = ?";
-  private static final String DELETE = "UPDATE empleados SET cargo = 'Ninguno' WHERE id = ?";
+  private static final String DELETE = "UPDATE empleados SET cargo = 'Ninguno' , activo = 0 WHERE id = ?";
 
-  // =========================
-  // INSERTAR
-  // =========================
   public void insertar(Empleado empleado) {
 
     Connection conn = null;
@@ -53,9 +50,6 @@ public class EmpleadoDAO {
     }
   }
 
-  // =========================
-  // OBTENER POR ID
-  // =========================
   public Empleado obtenerPorId(int id) {
 
     Connection conn = null;
@@ -93,9 +87,6 @@ public class EmpleadoDAO {
     return empleado;
   }
 
-  // =========================
-  // OBTENER TODOS
-  // =========================
   public List<Empleado> obtenerTodos() {
 
     Connection conn = null;
