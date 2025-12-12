@@ -1,14 +1,13 @@
-package com.wvl.market.utils;
+package com.wvl.utils;
 
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.net.URI;
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.net.URL;
 
 public class ImageNetwork {
-  private static final String CACHE_DIR = "__storage/cache/";
+  private static final String CACHE_DIR = ".cache/";
 
   static {
     new File(CACHE_DIR).mkdirs();
@@ -26,7 +25,7 @@ public class ImageNetwork {
       }
 
       // ⬇️ Descarga desde internet
-      BufferedImage img = ImageIO.read(new URL(url));
+      BufferedImage img = ImageIO.read(new URI(url).toURL());
       ImageIO.write(img, "png", localFile); // 🧠 Guarda en disco
       return new ImageIcon(img);
 

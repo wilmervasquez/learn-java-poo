@@ -1,8 +1,7 @@
 package com.wvl.negocio.vista.componentes;
 
-import com.wvl.negocio.utils.ImageNetwork;
-
 import javax.swing.*;
+import com.wvl.utils.ImageNetwork;
 import java.awt.*;
 
 public class CardProduct extends JPanel {
