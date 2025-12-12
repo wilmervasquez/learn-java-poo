@@ -3,7 +3,6 @@ package com.wvl.market.views.panel;
 import com.wvl.market.views.Icon;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class SidebarPanel extends JPanel {

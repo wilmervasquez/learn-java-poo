@@ -1,17 +1,13 @@
 package com.wvl.db;
 
-import com.wvl.negocio.entidades.Cliente;
-
 import java.sql.Connection;
-import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    MySqlDb db = new MySqlDb();
     Scan sc = new Scan();
     char y;
 
-    Connection connection= db.connect();
+    Connection connection= MySqlDb.connect();
     ClientController controller = new ClientController(connection);
     if (connection == null) {
       System.out.println("No se ha podido conectar a la base de datos");

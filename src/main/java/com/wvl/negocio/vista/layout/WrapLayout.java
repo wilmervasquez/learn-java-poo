@@ -1,6 +1,5 @@
 package com.wvl.negocio.vista.layout;
 
-import javax.swing.*;
 import java.awt.*;
 
 public class WrapLayout extends FlowLayout {

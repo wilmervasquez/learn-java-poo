@@ -8,7 +8,6 @@ import com.wvl.stage4.models.ReporteVenta;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 

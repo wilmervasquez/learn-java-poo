@@ -1,14 +1,10 @@
 package com.wvl.stage4.views;
 
-import com.wvl.market.entity.Product;
 import com.wvl.stage4.dao.ProductoDAO;
 import com.wvl.stage4.models.Producto;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoTable extends JScrollPane {
