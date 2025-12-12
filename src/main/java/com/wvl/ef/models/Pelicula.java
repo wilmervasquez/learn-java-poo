@@ -1,7 +1,5 @@
 package com.wvl.ef.models;
 
-import java.time.LocalDateTime;
-// Pelicula.java
 import java.util.Objects;
 
 public class Pelicula {
@@ -33,9 +31,7 @@ public class Pelicula {
 
   @Override
   public String toString() {
-    return "Pelicula{" + "id=" + id + ", codigo='" + codigo + '\'' +
-            ", titulo='" + titulo + '\'' + ", genero='" + genero + '\'' +
-            ", duracion=" + duracion + '}';
+    return titulo + " " + genero;
   }
 
   @Override

@@ -7,9 +7,6 @@ import com.wvl.ef.models.Cliente;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteDAO {
     // CREATE

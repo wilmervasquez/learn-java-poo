@@ -4,15 +4,15 @@ import java.util.Objects;
 
 public class Cliente extends Persona {
   private int id;
-  private String nombres;
-  private String apellidos;
   private String email;
   private String telefono;
 
   public Cliente() {}
   public Cliente(int id, String nombres, String apellidos, String email, String telefono) {
     super(nombres, apellidos);
-    this.id = id;  this.email = email; this.telefono = telefono;
+    this.id = id;  
+    this.email = email; 
+    this.telefono = telefono;
   }
   public Cliente(String nombres, String apellidos, String email, String telefono) {
     this(0, nombres, apellidos, email, telefono);
@@ -28,9 +28,7 @@ public class Cliente extends Persona {
 
   @Override
   public String toString() {
-    return "Cliente{" + "id=" + id + ", nombres='" + nombres + '\'' +
-            ", apellidos='" + apellidos + '\'' + ", email='" + email + '\'' +
-            ", telefono='" + telefono + '\'' + '}';
+    return nombres + " " + apellidos;
   }
 
   @Override

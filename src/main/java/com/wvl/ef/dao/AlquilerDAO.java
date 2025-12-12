@@ -4,7 +4,6 @@ import com.wvl.ef.database.ConexionDB;
 import com.wvl.ef.models.Alquiler;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 

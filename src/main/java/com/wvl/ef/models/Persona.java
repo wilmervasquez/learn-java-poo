@@ -1,8 +1,8 @@
 package com.wvl.ef.models;
 
 public class Persona {
-  private String nombres;
-  private String apellidos;
+  protected String nombres;
+  protected String apellidos;
 
   public Persona() {}
   public Persona(String nombres, String apellidos) {
@@ -11,8 +11,8 @@ public class Persona {
   }
 
   public String getNombres() { return nombres; }
-  public void setNombres(String nombres) { this.nombres = nombres; }
   public String getApellidos() { return apellidos; }
+  
+  public void setNombres(String nombres) { this.nombres = nombres; }
   public void setApellidos(String apellidos) { this.apellidos = apellidos; }
-
 }

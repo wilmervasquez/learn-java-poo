@@ -16,7 +16,7 @@ public class ConexionDB {
       connection = DriverManager.getConnection(URL, USER, PASSWORD);
       return connection;
     } catch (SQLException e) {
-      System.out.println(e.getMessage());
+      System.out.println("Database: " + e.getMessage());
       return null;
     }
   }
