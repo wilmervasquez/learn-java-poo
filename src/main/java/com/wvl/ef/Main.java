@@ -1,7 +1,6 @@
 package com.wvl.ef;
 
 import com.wvl.ef.views.MainFrame;
-
 import javax.swing.*;
 
 public class Main {

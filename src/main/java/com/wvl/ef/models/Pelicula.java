@@ -7,7 +7,7 @@ public class Pelicula {
   private String codigo;
   private String titulo;
   private String genero;
-  private Integer duracion; // minutos
+  private Integer duracion; 
 
   public Pelicula() {}
   public Pelicula(int id, String codigo, String titulo, String genero, Integer duracion) {
